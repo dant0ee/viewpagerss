@@ -23,15 +23,18 @@ class BookInfoFragment : Fragment() {
         val imgView= view.findViewById<ImageView>(R.id.imageView)
         val txtV= view.findViewById<TextView>(R.id.textView7)
         val txt5 =view.findViewById<TextView>(R.id.textView8)
+        val pasi=view.findViewById<TextView>(R.id.pasi)
 
         val bundle = this.arguments
         if (bundle != null) {
             val myInt = bundle.getInt("img", 0)
             val myString = bundle.getString("title", "")
             val myDesc = bundle.getString("desc", "")
+            val wigni = bundle.getString("passi","")
             imgView.setImageResource(myInt)
             txtV.text = myString
             txt5.text= myDesc
+            pasi.text= wigni
         }
 
 

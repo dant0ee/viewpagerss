@@ -18,6 +18,7 @@ class BookAdapter(private val booklist:ArrayList<Books>)
         val imageView: ImageView =itemView.findViewById(R.id.poto)
         val textView: TextView =itemView.findViewById(R.id.textView)
         val agwera : TextView=itemView.findViewById(R.id.agwera)
+        val pasi: TextView=itemView.findViewById(R.id.wignispasi)
 
 
     }
@@ -36,6 +37,7 @@ class BookAdapter(private val booklist:ArrayList<Books>)
         holder.imageView.setImageResource(book.image)
         holder.textView.text = book.name
         holder.agwera.text=book.dec
+        holder.pasi.text=book.pas
 
 
 
@@ -45,6 +47,7 @@ class BookAdapter(private val booklist:ArrayList<Books>)
             bundle.putString("title", book.name)
             bundle.putInt("img", book.image)
             bundle.putString("desc",book.dec)
+            bundle.putString("passi",book.pas)
 
 
             val fragment  = BookInfoFragment()

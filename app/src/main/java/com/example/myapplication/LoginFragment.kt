@@ -58,7 +58,7 @@ class LoginFragment: Fragment(R.layout.login_fragment) {
             dialog.show()
         }
         RESET.setOnClickListener {
-            val fragment1 = ResetPassword()
+            val fragment1 = PassRecover()
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.mainContainer, fragment1)
             transaction?.commit()
