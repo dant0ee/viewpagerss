@@ -28,9 +28,10 @@ class BookInfoFragment : Fragment() {
         if (bundle != null) {
             val myInt = bundle.getInt("img", 0)
             val myString = bundle.getString("title", "")
+            val myDesc = bundle.getString("desc", "")
             imgView.setImageResource(myInt)
             txtV.text = myString
-
+            txt5.text= myDesc
         }
 
 

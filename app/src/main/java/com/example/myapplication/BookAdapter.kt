@@ -17,6 +17,8 @@ class BookAdapter(private val booklist:ArrayList<Books>)
     class BookViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val imageView: ImageView =itemView.findViewById(R.id.poto)
         val textView: TextView =itemView.findViewById(R.id.textView)
+        val agwera : TextView=itemView.findViewById(R.id.agwera)
+
 
     }
 
@@ -33,12 +35,17 @@ class BookAdapter(private val booklist:ArrayList<Books>)
         val book = booklist[position]
         holder.imageView.setImageResource(book.image)
         holder.textView.text = book.name
+        holder.agwera.text=book.dec
+
+
 
         holder.itemView.setOnClickListener {
             val bundle = Bundle()
 
             bundle.putString("title", book.name)
             bundle.putInt("img", book.image)
+            bundle.putString("desc",book.dec)
+
 
             val fragment  = BookInfoFragment()
             fragment.arguments = bundle

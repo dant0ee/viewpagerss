@@ -1,3 +1,3 @@
 package com.example.myapplication
 
-data class Books(val image:Int,val name :String)
+data class Books(val image:Int,val name :String, val dec:String)
