@@ -40,5 +40,8 @@
         <argument
             android:name="img"
             app:argType="integer" />
+        <argument
+            android:name="descripation"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -1,10 +1,12 @@
 package com.example.myapplication
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.fragments.BookInfoFragment
 
@@ -20,16 +22,33 @@ class BookAdapter(private val booklist:ArrayList<Books>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val view= LayoutInflater.from(parent.context).inflate(R.layout.items,parent,false)
+
         return BookViewHolder(view)
+
 
 
 
     }
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book=booklist[position]
+        val book = booklist[position]
         holder.imageView.setImageResource(book.image)
-        holder.textView.text=book.name
+        holder.textView.text = book.name
 
+        holder.itemView.setOnClickListener {
+            val bundle = Bundle()
+
+            bundle.putString("title", book.name)
+            bundle.putInt("img", book.image)
+
+            val fragment  = BookInfoFragment()
+            fragment.arguments = bundle
+
+            (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.mainContainer, fragment,null)
+                .addToBackStack(null)
+                .commit()
+
+        }
 
 
     }
