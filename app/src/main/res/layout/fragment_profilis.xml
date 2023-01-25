@@ -61,7 +61,7 @@
         android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log in !"
+        android:text="Sign out !"
         android:textColor="#00FF0A"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

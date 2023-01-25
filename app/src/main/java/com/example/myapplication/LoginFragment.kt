@@ -45,7 +45,8 @@ class LoginFragment: Fragment(R.layout.login_fragment) {
             .setMessage("გსურთ გათიშოთ აპლიკაცია?")
             .setCancelable(true)
             .setPositiveButton("yes") { dialogInterface, it ->
-                dialogInterface.cancel()
+                activity?.finish()
+
             }
             .setNegativeButton("no") { dialogInterface, it ->
                 dialogInterface.cancel()

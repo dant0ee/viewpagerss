@@ -36,7 +36,8 @@ class xd : Fragment() {
                 }
                 R.id.profilisFragment-> {
                     // Replace the current fragment with Fragment1
-                    val fragment1 = ProfilisFragment()
+
+                    val fragment1 = ResetPassword()
                     val transaction = fragmentManager?.beginTransaction()
                     transaction?.replace(R.id.mainContainer1, fragment1)
                     transaction?.commit()

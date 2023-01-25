@@ -39,20 +39,20 @@ class ResetPassword :Fragment(R.layout.fragment_profilis) {
 
 
         Login.setOnClickListener {
-            val fragment1 =xd()
+            val fragment1 =LoginFragment()
             val transaction = fragmentManager?.beginTransaction()
+            FirebaseAuth.getInstance().signOut()
+            editor?.clear()
             transaction?.replace(R.id.mainContainer, fragment1)
             transaction?.commit()
 
         }
         resetpass.setOnClickListener {
-
             val curpass = curentpass.text.toString()
             val nwpass = newpass.text.toString()
             if (curpass.isNotEmpty() && nwpass.isNotEmpty()) {
                 val user = FirebaseAuth.getInstance().currentUser
                 val credential = EmailAuthProvider.getCredential(user?.email!!, curpass)
-
                 user.reauthenticateAndRetrieveData(credential)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
