@@ -25,5 +25,20 @@
         <action
             android:id="@+id/action_wignebisFragment_to_profilisFragment2"
             app:destination="@id/profilisFragment" />
+        <action
+            android:id="@+id/action_wignebisFragment_to_bookInfoFragment"
+            app:destination="@id/bookInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookInfoFragment"
+        android:name="com.example.myapplication.fragments.BookInfoFragment"
+        android:label="fragment_book_info"
+        tools:layout="@layout/fragment_book_info" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="img"
+            app:argType="integer" />
     </fragment>
 </navigation>
