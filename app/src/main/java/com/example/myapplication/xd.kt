@@ -28,9 +28,9 @@ class xd : Fragment() {
             when (item.itemId) {
                 R.id.wignebisFragment -> {
                     // Replace the current fragment with Fragment1
-                    val fragment1 =WignebisFragment()
+                    val fragment1 =First()
                     val transaction = fragmentManager?.beginTransaction()
-                    transaction?.replace(R.id.mainContainer1, fragment1)
+                    transaction?.replace(R.id.container1, fragment1)
                     transaction?.commit()
                     true
                 }
@@ -39,12 +39,10 @@ class xd : Fragment() {
 
                     val fragment1 = ResetPassword()
                     val transaction = fragmentManager?.beginTransaction()
-                    transaction?.replace(R.id.mainContainer1, fragment1)
+                    transaction?.replace(R.id.container1, fragment1)
                     transaction?.commit()
                     true
-                }
-
-                else -> false
+                }else->false
             }
         }
 
